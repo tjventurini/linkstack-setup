@@ -27,3 +27,6 @@ clear:
 
 login:
 	@docker compose exec linkstack bash
+
+share:
+	@./ngrok http http://linkstack.localhost

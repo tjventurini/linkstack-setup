@@ -15,7 +15,7 @@ services:
       - traefik.enable=true
       - traefik.docker.network=reverse-proxy
       # http
-      - traefik.http.routers.linkstack.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.linkstack.rule=Host(`${DOMAIN}`) || Host(`4679-62-178-62-138.ngrok-free.app`)
       - traefik.http.routers.linkstack.entrypoints=web
 
 volumes:
