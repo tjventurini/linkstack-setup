@@ -11,6 +11,6 @@ make init
 
 ## Commands
 
-```md
-# ./README.md
+```Makefile
+# ./Makefile
 ```
