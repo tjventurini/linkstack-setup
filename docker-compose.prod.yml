@@ -1,0 +1,24 @@
+networks:
+  frontend:
+    external: true
+    name: reverse-proxy
+
+services:
+  linkstack:
+    image: linkstackorg/linkstack:latest
+    restart: ${RESTART}
+    networks:
+      - frontend
+    volumes:
+      - linkstack:/htdocs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse-proxy"
+      # https
+      - "traefik.http.routers.linkstack.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.linkstack.entrypoints=websecure"
+      - "traefik.http.routers.linkstack.tls=true"
+      - "traefik.http.routers.linkstack.tls.certresolver=letsencrypt"
+
+volumes:
+  linkstack:
