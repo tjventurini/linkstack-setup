@@ -53,3 +53,5 @@ sudo vim /var/lib/docker/volumes/<project_name>_linkstack/_data/.env
 # change the following line from false to true
 FORCE_HTTPS=true
 ```
+
+[Source](https://docs.linkstack.org/docker/reverse-proxies/)
