@@ -42,3 +42,14 @@ clear:
 login:
 	@docker compose exec linkstack bash
 ```
+
+## HTTPS
+
+In order to force linkstack to use HTTPS, you need to set the `FORCE_HTTPS` environment variable to `true` in the `.env` file IN THE PERSISTANT STORAGE of your container.
+
+```
+sudo vim /var/lib/docker/volumes/<project_name>_linkstack/_data/.env
+
+# change the following line from false to true
+FORCE_HTTPS=true
+```
